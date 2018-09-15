@@ -24,9 +24,6 @@
 <body>
 <!-- <input id = "export" type="button" value="导出"> -->
 <a href ="user/exportExcel">导出excel</a> <br>
-
 <a href ="user/exportCSV">导出CSV</a> <br>
-<a href ="user/exportExcelZip">导出Excel-ZIP</a>
-
 </body>
 </html>
