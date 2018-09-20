@@ -56,13 +56,14 @@ public class UserController {
     		List<User> formList=  userService.findUsers();
     		String currentTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
     		File tFile = File.createTempFile("名字明细表", ".csv");
-    		CsvWriter csvWriter = new CsvWriter(tFile.getCanonicalPath()+currentTime,',', Charset.forName("gbk"));
-    		String [] headers ={"编号","姓名","年龄"};
+    		CsvWriter csvWriter = new CsvWriter(tFile.getCanonicalPath()+currentTime,' ', Charset.forName("gbk"));
+    		String [] headers ={"序号,","姓名,","年龄,","生成编号,"};
     		csvWriter.writeRecord(headers);
     		for (User user : formList) {
-				csvWriter.write(user.getId()+"");
-				csvWriter.write(user.getUserName());
-				csvWriter.write(user.getAge() + "");
+				csvWriter.write(user.getId()+",");
+				csvWriter.write(user.getUserName()+",");
+				csvWriter.write(user.getAge() + ",");
+				csvWriter.write(user.getCode() + "\t,");
 				csvWriter.endRecord();
 			}
     		csvWriter.close();
