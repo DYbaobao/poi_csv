@@ -8,6 +8,7 @@ public class User {
     //@CsvBindByName(column = "姓名")
     private String userName;
     private int age;
+    private String code;
     public int getId() {
         return id;
     }
@@ -31,6 +32,12 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
-    
-	
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
