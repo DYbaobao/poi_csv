@@ -64,6 +64,7 @@ public class UserController {
 				csvWriter.write(user.getUserName());
 				csvWriter.write(user.getAge() + "");
 				csvWriter.write(user.getCode() + "\t",true);
+
 				csvWriter.endRecord();
 			}
     		csvWriter.close();
