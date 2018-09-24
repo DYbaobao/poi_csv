@@ -47,7 +47,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/exportExcel1")
-    public void exportExcelZip(HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public void exportExcel1(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		   response.reset();//清空reponse
 		    OutputStream outputStream = null;
 		   List<User> users = userService.findUsers();
