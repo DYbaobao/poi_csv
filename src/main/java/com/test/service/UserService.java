@@ -15,4 +15,5 @@ public interface UserService {
     List<User> findUsers();
     void addUser(User user);
     List<User> FindAll(String fileName);
+    int findUserCount();
 }

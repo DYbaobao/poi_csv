@@ -13,4 +13,7 @@
     <insert id="addUser" parameterType="com.test.model.User">
         INSERT  INTO  USER(userName) VALUES (#{userName})
     </insert>
+    <select id="findUserCount" resultType="int">
+        SELECT COUNT(*) FROM  USER
+    </select>
 </mapper>

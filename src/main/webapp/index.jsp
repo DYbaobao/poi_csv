@@ -25,5 +25,6 @@
 <!-- <input id = "export" type="button" value="导出"> -->
 <a href ="user/exportExcel">导出excel</a> <br>
 <a href ="user/exportCSV">导出CSV</a> <br>
+<a href="user/exportExcel1">导出excel后缀为xlsx</a><br>
 </body>
 </html>

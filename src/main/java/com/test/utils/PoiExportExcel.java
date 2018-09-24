@@ -61,6 +61,9 @@ public class PoiExportExcel {
 				cell = row.createCell(2);//年龄
 				cell.setCellStyle(bodyCellStyle);
 				cell.setCellValue(pList.get(i).getAge());
+				cell = row.createCell(3);//生成的编号
+				cell.setCellStyle(bodyCellStyle);
+				cell.setCellValue(pList.get(i).getCode());
 				if (currentRowCount % perPageNum ==0) { //每个工作簿显示5行
 					sheet = null;
 					sheetNum ++; //工作簿编号增加1
@@ -152,5 +155,8 @@ public class PoiExportExcel {
 		cell = row.createCell(2);//年龄
 		cell.setCellStyle(cellStyle);
 		cell.setCellValue("年龄");
+		cell = row.createCell(3);//生成的编号
+		cell.setCellStyle(cellStyle);
+		cell.setCellValue("生成的编号");
 	}
 }

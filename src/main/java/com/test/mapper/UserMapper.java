@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserMapper {
     List<User> findUsers();
     void addUser(User user);
+    int  findUserCount();
 }

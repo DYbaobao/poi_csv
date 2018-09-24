@@ -3,23 +3,10 @@
 import com.test.mapper.UserMapper;
 import com.test.model.User;
 import com.test.service.UserService;
-import com.test.utils.ExcelUtiles;
 
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -45,6 +32,10 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findUsers();
 	}
 
-	
+    @Override
+    public int findUserCount() {
+        return userMapper.findUserCount();
+    }
+
 
 }
