@@ -71,7 +71,17 @@ public class ExpoortTable {
               }
           }
       }
-
+    /**
+     * 创建目标路径中文件夹
+     *
+     */
+    public static boolean makeDirs(String folderName) {
+        if (folderName == null && folderName.isEmpty()){
+            return  false;
+        }
+        File folder = new File(folderName);
+        return (folder.exists() && folder.isDirectory()) ? true : folder.mkdirs();
+    }
       //压缩文件
       public static  void ZipFiles(List<File> srcFile,File zipFile) throws Exception{
           byte [] buff = new byte[1024];
@@ -100,17 +110,6 @@ public class ExpoortTable {
 
       }
 
-    /**
-     * 创建目标路径中文件夹
-     *
-     */
-    public static boolean makeDirs(String folderName) {
-        if (folderName == null && folderName.isEmpty()){
-            return  false;
-        }
-        File folder = new File(folderName);
-        return (folder.exists() && folder.isDirectory()) ? true : folder.mkdirs();
-    }
 
 }
 

@@ -14,6 +14,7 @@ import java.util.List;
 public interface UserService {
     List<User> findUsers();
     void addUser(User user);
+    int  findUserCount();
     List<User> FindAll(String fileName);
-    int findUserCount();
+
 }

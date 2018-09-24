@@ -27,15 +27,14 @@ public class UserServiceImpl implements UserService {
          userMapper.addUser(user);
     }
 
-	@Override
-	public List<User> FindAll(String fileName) {
-		return userMapper.findUsers();
-	}
-
     @Override
     public int findUserCount() {
         return userMapper.findUserCount();
     }
+	@Override
+	public List<User> FindAll(String fileName) {
+		return userMapper.findUsers();
+	}
 
 
 }

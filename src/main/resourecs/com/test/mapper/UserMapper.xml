@@ -7,13 +7,14 @@
         <id column="id" property="id"></id>
         <result column="username" property="userName"></result>
     </resultMap>
+    <select id="findUserCount" resultType="int">
+        SELECT COUNT(*) FROM  USER
+    </select>
     <select id="findUsers" resultMap ="users">
         SELECT  * FROM  USER
     </select>
     <insert id="addUser" parameterType="com.test.model.User">
         INSERT  INTO  USER(userName) VALUES (#{userName})
     </insert>
-    <select id="findUserCount" resultType="int">
-        SELECT COUNT(*) FROM  USER
-    </select>
+
 </mapper>
