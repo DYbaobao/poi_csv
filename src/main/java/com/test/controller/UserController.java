@@ -49,7 +49,7 @@ public class UserController {
     @RequestMapping(value = "/exportExcel1")
     public void exportExcel1(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		   response.reset();//清空reponse
-		    OutputStream outputStream = null;
+		   String path = request.getServletContext().getRealPath("/");
 		   List<User> users = userService.findUsers();
 			String currentTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 			String filename = URLEncoder.encode("名字明细表" +currentTime,"UTF-8");
@@ -106,6 +106,10 @@ public class UserController {
  		   }  
  		   in.close();  
  		   out.close();
+ 		   //删掉临时的文件
+ 		   tFile.delete();
+ 		   fileLoad.delete();
+ 		   System.gc();
 		} catch (Exception e) {
 			e.printStackTrace();
 	 }	 
