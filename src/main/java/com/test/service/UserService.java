@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.model.User;
+import org.apache.ibatis.session.RowBounds;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -16,5 +17,6 @@ public interface UserService {
     void addUser(User user);
     int  findUserCount();
     List<User> FindAll(String fileName);
+    List<User> findUsersByRowBounds(RowBounds rowBounds);
 
 }

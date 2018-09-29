@@ -1,6 +1,8 @@
 package com.test.mapper;
 
+import com.github.pagehelper.Page;
 import com.test.model.User;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -11,4 +13,5 @@ public interface UserMapper {
     List<User> findUsers();
     int  findUserCount();
     void addUser(User user);
+    Page<User> findUsersByRowBounds(RowBounds rowBounds);
 }

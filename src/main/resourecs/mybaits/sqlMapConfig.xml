@@ -8,6 +8,17 @@
     <typeAliases>
         <package name="com.test.model"/>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="diaect" value="mysql"/>
+            <property name="reasonable" value="true"/>
+            <!--rowBoundsWithCount 使用rowBounds会进行count查询  -->
+            <property name="rowBoundsWithCount" value="true"/>
+            <property name="pageSizeZero" value="true"/>
+            <property name="offsetAsPageNum" value="true"/>
+            <property name="returnPageInfo" value="check"/>
+        </plugin>
+    </plugins>
     <!--<mappers>
         <mapper resource="com/test/mapper/UserMapper.xml"></mapper>
     </mappers>-->

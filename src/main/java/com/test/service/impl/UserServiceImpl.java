@@ -4,6 +4,7 @@ import com.test.mapper.UserMapper;
 import com.test.model.User;
 import com.test.service.UserService;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +37,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findUsers();
 	}
 
+    @Override
+    public List<User> findUsersByRowBounds(RowBounds rowBounds) {
+        return userMapper.findUsersByRowBounds(rowBounds);
+    }
 
 }

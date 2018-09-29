@@ -27,5 +27,6 @@
 <a href ="user/exportCSV">导出CSV</a> <br>
 
 <a href="user/exportExcel1">导出excel后缀为xlsx</a><br>
+<a href="user/List">查看user列表</a>
 </body>
 </html>

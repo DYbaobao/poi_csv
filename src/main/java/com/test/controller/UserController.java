@@ -14,11 +14,13 @@ import java.util.List;
 import java.util.UUID;
 
 import com.csvreader.CsvWriter;
+import com.github.pagehelper.PageInfo;
 import com.test.model.User;
 import com.test.service.UserService;
 import com.test.utils.ExpoortTable;
 import com.test.utils.PoiExportExcel;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -26,7 +28,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,8 +45,16 @@ import javax.servlet.http.HttpServletResponse;
 public class UserController {
     @Autowired
     private UserService userService;
-
-    /**
+	@RequestMapping(value="/List")
+	public String  List(@RequestParam(required=true,defaultValue="1") Integer page, HttpServletRequest request, Model model){
+		RowBounds rowBounds = new RowBounds(page,10);
+		List<User> users = userService.findUsersByRowBounds(rowBounds);
+		PageInfo<User> p = new PageInfo<User>(users);
+		model.addAttribute("page", p);
+		model.addAttribute("users", users);
+		return "showUser";
+	}
+	/**
      * 导出报表
      * @return
      */

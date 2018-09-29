@@ -16,5 +16,7 @@
     <insert id="addUser" parameterType="com.test.model.User">
         INSERT  INTO  USER(userName) VALUES (#{userName})
     </insert>
-
+    <select id="findUsersByRowBounds" resultMap="users">
+        SELECT  * FROM  USER
+    </select>
 </mapper>
