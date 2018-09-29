@@ -19,4 +19,6 @@
         <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
+    <mvc:resources location="/jquery-easyui-1.5.5.1" mapping="/**"/>
+    <mvc:resources location="/WEB-INF/view" mapping="/**"/>
 </beans>

@@ -18,7 +18,7 @@
     <!--
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
 </head>
 
 <body>
@@ -27,6 +27,7 @@
 <a href ="user/exportCSV">导出CSV</a> <br>
 
 <a href="user/exportExcel1">导出excel后缀为xlsx</a><br>
-<a href="user/List">查看user列表</a>
+<a href="user/List">查看user列表</a><br>
+<a href="view/userList.jsp">查询userList显示essyUI</a>
 </body>
 </html>
