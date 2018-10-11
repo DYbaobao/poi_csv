@@ -18,7 +18,10 @@
     <!--
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
-
+   <script type="text/javascript">
+       var a='<%=(System.currentTimeMillis()*1000)+(System.nanoTime()-System.nanoTime()/1000000*1000000)/1000%>';
+       alert(a);
+   </script>
 </head>
 
 <body>
@@ -28,6 +31,7 @@
 
 <a href="user/exportExcel1">导出excel后缀为xlsx</a><br>
 <a href="user/List">查看user列表</a><br>
-<a href="view/userList.jsp">查询userList显示essyUI</a>
+<a href="web/userList.jsp">查询userList显示essyUI</a>
+
 </body>
 </html>
